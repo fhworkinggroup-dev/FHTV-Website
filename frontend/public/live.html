@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>FHTV 直播</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-left">
+      <span class="logo">FHTV</span>
+      <nav class="topbar-nav">
+        <a href="index.html">首页</a>
+        <a href="live.html" class="active">直播</a>
+        <a href="schedule.html">节目表</a>
+      </nav>
+    </div>
+    <div class="topbar-user">
+      <img src="../img/avatar.png" alt="用户头像" class="user-avatar" id="avatarBtn">
+      <span class="user-name" id="userName">未登录</span>
+      <div class="user-menu" id="userMenu">
+  <a href="user-setting.html">用户设置</a>
+  <a href="login.html">登录</a>
+  <a href="register.html">注册</a>
+      </div>
+    </div>
+  </div>
+  <main class="main-view">
+    <section class="welcome">
+      <h1>FHTV 直播</h1>
+      <iframe id="liveFrame" width="100%" height="480" frameborder="0" allowfullscreen></iframe>
+    </section>
+  </main>
+  <script src="../js/live.js"></script>
+  <script>
+    // 用户菜单下拉交互
+    const avatarBtn = document.getElementById('avatarBtn');
+    const userMenu = document.getElementById('userMenu');
+    avatarBtn.onclick = function(e) {
+      userMenu.classList.toggle('show');
+      e.stopPropagation();
+    };
+    document.body.onclick = function() {
+      userMenu.classList.remove('show');
+    };
+    userMenu.onclick = function(e) {
+      e.stopPropagation();
+    };
+  </script>
+</body>
+</html>

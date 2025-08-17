@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>用户设置 - FHTV</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-left">
+      <span class="logo">FHTV</span>
+      <nav class="topbar-nav">
+        <a href="index.html">首页</a>
+        <a href="live.html">直播</a>
+        <a href="schedule.html">节目表</a>
+      </nav>
+    </div>
+    <div class="topbar-user">
+      <img src="../img/avatar.png" alt="用户头像" class="user-avatar" id="avatarBtn">
+      <span class="user-name" id="userName">未登录</span>
+      <div class="user-menu" id="userMenu">
+        <a href="login.html">登录</a>
+        <a href="register.html">注册</a>
+      </div>
+    </div>
+  </div>
+  <main class="main-view">
+    <section class="welcome">
+      <h1>用户设置</h1>
+      <form id="userSettingForm" enctype="multipart/form-data" style="max-width:400px;margin:32px auto;text-align:left;">
+        <label for="avatar" style="display:block;margin-bottom:8px;">头像</label>
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+          <img id="avatarPreview" src="../img/avatar.png" alt="头像预览" style="width:64px;height:64px;border-radius:50%;object-fit:cover;box-shadow:0 2px 8px #e3e6ee;">
+          <input type="file" id="avatar" name="avatar" accept="image/*">
+        </div>
+        <label for="username" style="display:block;margin-bottom:8px;">用户名</label>
+        <input type="text" id="username" name="username" placeholder="请输入新用户名" style="width:100%;margin-bottom:18px;">
+        <div class="main-btns">
+          <button type="submit" class="main-btn">保存设置</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script>
+    // 用户菜单下拉交互
+    const avatarBtn = document.getElementById('avatarBtn');
+    const userMenu = document.getElementById('userMenu');
+    avatarBtn.onclick = function(e) {
+      userMenu.classList.toggle('show');
+      e.stopPropagation();
+    };
+    document.body.onclick = function() {
+      userMenu.classList.remove('show');
+    };
+    userMenu.onclick = function(e) {
+      e.stopPropagation();
+    };
+    // 头像预览
+    document.getElementById('avatar').onchange = function(e) {
+      const file = e.target.files[0];
+      if(file) {
+        const reader = new FileReader();
+        reader.onload = function(ev) {
+          document.getElementById('avatarPreview').src = ev.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    };
+    // 表单提交（前端演示，实际需后端接口支持）
+    document.getElementById('userSettingForm').onsubmit = function(e) {
+      e.preventDefault();
+      alert('设置已保存（演示，需后端接口支持）');
+    };
+  </script>
+</body>
+</html>

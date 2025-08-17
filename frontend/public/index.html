@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>FHTV 首页</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-left">
+      <span class="logo">FHTV</span>
+      <nav class="topbar-nav">
+        <a href="index.html" class="active">首页</a>
+        <a href="live.html">直播</a>
+        <a href="schedule.html">节目表</a>
+      </nav>
+    </div>
+    <div class="topbar-user">
+      <img src="../img/avatar.png" alt="用户头像" class="user-avatar" id="avatarBtn">
+      <span class="user-name" id="userName">未登录</span>
+      <div class="user-menu" id="userMenu">
+  <a href="user-setting.html">用户设置</a>
+  <a href="login.html">登录</a>
+  <a href="register.html">注册</a>
+      </div>
+    </div>
+  </div>
+  <main class="main-view">
+    <section class="welcome">
+      <h1>欢迎来到 FHTV 电视台</h1>
+      <p>这里是属于你的电视世界，体验节目、直播与互动。</p>
+      <div class="main-btns">
+        <a href="live.html" class="main-btn">进入直播</a>
+        <a href="schedule.html" class="main-btn">查看节目表</a>
+      </div>
+    </section>
+    <div id="recommend"></div>
+  </main>
+  <script src="../js/main.js"></script>
+  <script>
+    // 用户菜单下拉交互
+    const avatarBtn = document.getElementById('avatarBtn');
+    const userMenu = document.getElementById('userMenu');
+    avatarBtn.onclick = function(e) {
+      userMenu.classList.toggle('show');
+      e.stopPropagation();
+    };
+    document.body.onclick = function() {
+      userMenu.classList.remove('show');
+    };
+    userMenu.onclick = function(e) {
+      e.stopPropagation();
+    };
+    // 示例：如有登录信息可动态显示用户名和头像
+    // document.getElementById('userName').textContent = '张三';
+    // document.querySelector('.user-avatar').src = '../img/xxx.png';
+  </script>
+</body>
+</html>

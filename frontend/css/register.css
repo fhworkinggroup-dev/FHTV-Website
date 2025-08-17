@@ -1,0 +1,80 @@
+body {
+  background: linear-gradient(120deg, #e9eafc 0%, #f0f4f8 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', 'Microsoft YaHei', Arial, sans-serif;
+}
+
+.register-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.register-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(52, 73, 94, 0.12);
+  padding: 40px 32px 32px 32px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-card h2 {
+  margin-bottom: 28px;
+  color: #3a3a5a;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px #e3e6ee;
+}
+
+#registerForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+#registerForm input {
+  padding: 12px 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #dbe2ef;
+  background: #f7f9fa;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#registerForm input:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 2px #e9eafc;
+}
+
+.register-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.register-btns button {
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(90deg, #6c63ff 0%, #2980b9 100%);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #e3e6ee;
+  transition: background 0.2s, transform 0.2s;
+  letter-spacing: 1px;
+}
+
+.register-btns button:hover {
+  background: linear-gradient(90deg, #2980b9 0%, #6c63ff 100%);
+  transform: translateY(-2px) scale(1.04);
+}

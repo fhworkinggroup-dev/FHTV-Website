@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>节目表管理</title>
+  <link rel="stylesheet" href="../../css/admin.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="sidebar">
+      <h2>后台管理</h2>
+      <ul>
+        <li><a href="program.html">节目管理</a></li>
+        <li><a href="schedule.html" class="active">节目表管理</a></li>
+        <li><a href="user.html">用户管理</a></li>
+        <li><a href="system.html">系统设置</a></li>
+      </ul>
+    </aside>
+    <main class="main-content">
+      <div class="admin-container">
+        <h3>节目表管理</h3>
+        <form id="addScheduleForm">
+          <label for="program_id">节目ID</label>
+          <input type="number" name="program_id" id="program_id" placeholder="节目ID" required>
+          <label for="start_time">开始时间</label>
+          <input type="datetime-local" name="start_time" id="start_time" required>
+          <label for="end_time">结束时间</label>
+          <input type="datetime-local" name="end_time" id="end_time" required>
+          <button type="submit">添加节目表</button>
+        </form>
+        <div id="scheduleList"></div>
+      </div>
+    </main>
+  </div>
+  <script src="../../js/admin/schedule.js"></script>
+</body>
+</html>

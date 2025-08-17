@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>节目管理</title>
+  <link rel="stylesheet" href="../../css/admin.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="sidebar">
+      <h2>后台管理</h2>
+      <ul>
+        <li><a href="program.html" class="active">节目管理</a></li>
+        <li><a href="schedule.html">节目表管理</a></li>
+        <li><a href="user.html">用户管理</a></li>
+        <li><a href="system.html">系统设置</a></li>
+      </ul>
+    </aside>
+    <main class="main-content">
+      <div class="admin-container">
+        <h3>节目管理</h3>
+        <form id="addProgramForm">
+          <label for="name">节目名称</label>
+          <input type="text" name="name" id="name" placeholder="节目名称" required>
+          <label for="description">简介</label>
+          <input type="text" name="description" id="description" placeholder="简介">
+          <label for="cover">封面URL</label>
+          <input type="text" name="cover" id="cover" placeholder="封面URL">
+          <button type="submit">添加节目</button>
+        </form>
+        <div id="programList"></div>
+      </div>
+    </main>
+  </div>
+  <script src="../../js/admin/program.js"></script>
+</body>
+</html>

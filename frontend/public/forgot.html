@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>找回密码</title>
+  <link rel="stylesheet" href="../css/forgot.css">
+</head>
+<body>
+  <div class="forgot-wrapper">
+    <div class="forgot-card">
+      <h2>找回密码</h2>
+      <form id="forgotForm">
+        <input type="email" name="email" placeholder="邮箱" required>
+        <input type="text" name="code" placeholder="验证码" required>
+        <input type="password" name="newPassword" placeholder="新密码" required>
+        <div class="forgot-btns">
+          <button type="button" id="sendCode">发送验证码</button>
+          <button type="submit">重置密码</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="../js/forgot.js"></script>
+</body>
+</html>

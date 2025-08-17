@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>系统设置</title>
+  <link rel="stylesheet" href="../../css/admin.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="sidebar">
+      <h2>后台管理</h2>
+      <ul>
+        <li><a href="program.html">节目管理</a></li>
+        <li><a href="schedule.html">节目表管理</a></li>
+        <li><a href="user.html">用户管理</a></li>
+        <li><a href="system.html" class="active">系统设置</a></li>
+      </ul>
+    </aside>
+    <main class="main-content">
+      <div class="admin-container">
+        <h3>系统设置</h3>
+        <form id="liveSourceForm">
+          <label for="liveSource">直播源地址</label>
+          <input type="text" id="liveSource" placeholder="请输入直播源URL" required>
+          <button type="button" id="saveLiveSource">保存</button>
+        </form>
+        <form id="emailConfigForm">
+          <label for="smtpHost">SMTP服务器</label>
+          <input type="text" id="smtpHost" placeholder="SMTP服务器地址" required>
+          <label for="smtpPort">端口</label>
+          <input type="number" id="smtpPort" placeholder="端口号" required>
+          <label for="smtpUser">邮箱账号</label>
+          <input type="text" id="smtpUser" placeholder="邮箱账号" required>
+          <label for="smtpPass">邮箱密码</label>
+          <input type="password" id="smtpPass" placeholder="邮箱密码" required>
+          <button type="button" id="saveEmailConfig">保存邮箱配置</button>
+        </form>
+      </div>
+    </main>
+  </div>
+  <script src="../../js/admin/system.js"></script>
+</body>
+</html>
